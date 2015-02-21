@@ -215,6 +215,15 @@ trait HasPermission {
 
             return false;
         }
+        elseif (starts_with($method, 'make'))
+        {
+            if ($this->make(snake_case(substr($method, 4))))
+            {
+                return true;
+            }
+
+            return false;
+        }
         elseif (starts_with($method, 'allowed'))
         {
             if ($this->allowed(snake_case(substr($method, 7)), $parameters[0], (isset($parameters[1])) ? $parameters[1] : true))
