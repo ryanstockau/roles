@@ -132,6 +132,23 @@ trait HasRole {
     }
 
     /**
+     * Detatch role by slug.
+     *
+     * @param int|string|array $roleName
+     * @return mixed
+     * @throws \Bican\Roles\Exceptions\RoleNotFoundException
+     */
+    public function unmake($roleName)
+    {
+		$role = Role::where('slug','=',strtolower( $roleName ))->first();
+		if ( $role ) 
+		{
+    		return $this->detatchRole( $role );	
+		}
+		throw RoleNotFoundException('Role "' . $roleName . '" does not exist.');
+    }
+
+    /**
      * Detach role.
      *
      * @param int|\Bican\Roles\Models\Role $role
