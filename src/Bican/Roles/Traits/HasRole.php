@@ -143,7 +143,7 @@ trait HasRole {
 		$role = Role::where('slug','=',strtolower( $roleName ))->first();
 		if ( $role ) 
 		{
-    		return $this->detatchRole( $role );	
+    		return $this->detachRole( $role );	
 		}
 		throw new RoleNotFoundException('Role "' . $roleName . '" does not exist.');
     }
