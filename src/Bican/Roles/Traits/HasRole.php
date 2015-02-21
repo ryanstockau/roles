@@ -99,6 +99,23 @@ trait HasRole {
     }
 
     /**
+     * Attach role by slug.
+     *
+     * @param int|string|array $roleName
+     * @return mixed
+     * @throws \Bican\Roles\Exceptions\RoleNotFoundException
+     */
+    public function make($roleName)
+    {
+		$role = Role::where('slug','=',strtolower( $roleName ))->first();
+		if ( $role ) 
+		{
+    		return $this->attachRole( $role );	
+		}
+		throw RoleNotFoundException('Role "' . $roleName . '" does not exist.');
+    }
+
+    /**
      * Attach role.
      *
      * @param int|\Bican\Roles\Models\Role $role
