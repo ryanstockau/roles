@@ -112,7 +112,7 @@ trait HasRole {
 		{
     		return $this->attachRole( $role );	
 		}
-		throw RoleNotFoundException('Role "' . $roleName . '" does not exist.');
+		throw new RoleNotFoundException('Role "' . $roleName . '" does not exist.');
     }
 
     /**
@@ -145,7 +145,7 @@ trait HasRole {
 		{
     		return $this->detatchRole( $role );	
 		}
-		throw RoleNotFoundException('Role "' . $roleName . '" does not exist.');
+		throw new RoleNotFoundException('Role "' . $roleName . '" does not exist.');
     }
 
     /**

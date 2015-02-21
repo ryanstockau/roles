@@ -1,5 +1,5 @@
 {
-	"name": "bican/roles",
+	"name": "ryanstockau/roles",
 	"description": "Powerful package for handling roles and permissions in Laravel 5.",
 	"keywords": ["roles", "permissions", "laravel", "laravel5"],
 	"license": "MIT",
@@ -17,5 +17,6 @@
 		"psr-0": {
 			"Bican\\Roles": "src/"
 		}
-	}
+	},
+	"minimum-stability": "dev"
 }
